@@ -1,6 +1,6 @@
 class PowerbanksController < ApplicationController
+  before_action :set_powerbank, only: %i[show edit update destroy]
   def show
-    @powerbank = Powerbank.find(params[:id])
   end
 
   def new
@@ -17,9 +17,26 @@ class PowerbanksController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+    @powerbank.update(powerbank_params)
+    redirect_to powerbank_path(@powerbank)
+  end
+
+  def destroy
+    @powerbank.destroy
+    redirect_to root_path, status: :see_other
+  end
+
   private
 
   def powerbank_params
     params.require(:powerbank).permit(:title, :adress, :description, :price)
+  end
+
+  def set_powerbank
+    @powerbank = Powerbank.find(params[:id])
   end
 end
