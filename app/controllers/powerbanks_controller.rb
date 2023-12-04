@@ -1,5 +1,6 @@
 class PowerbanksController < ApplicationController
-  def index
-    @powerbanks = Powerbank.all
+  def show
+    @powerbank = Powerbank.find(params[:id])
   end
+
 end

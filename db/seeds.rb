@@ -7,3 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+User.create(name: "Albert", email: "albert@gmail.com", password: "albertdu13", phone_number: "0658301628")
+User.create(name: "Lou", email: "lou@gmail.com", password: "loudu13", phone_number: "0658858538")
+
+Powerbank.create(title: "Métro chargeur", adress: "21 rue Haxo", description: "5 chargeur disponible", price: 5, user_id: 1)
