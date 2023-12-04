@@ -10,9 +10,30 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_12_04_115217) do
+ActiveRecord::Schema[7.1].define(version: 2023_12_04_133935) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "powerbanks", force: :cascade do |t|
+    t.string "adress"
+    t.string "description"
+    t.integer "price"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_powerbanks_on_user_id"
+  end
+
+  create_table "reservations", force: :cascade do |t|
+    t.date "start_date"
+    t.date "end_date"
+    t.bigint "user_id", null: false
+    t.bigint "powerbank_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["powerbank_id"], name: "index_reservations_on_powerbank_id"
+    t.index ["user_id"], name: "index_reservations_on_user_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -26,4 +47,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_04_115217) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "powerbanks", "users"
+  add_foreign_key "reservations", "powerbanks"
+  add_foreign_key "reservations", "users"
 end
