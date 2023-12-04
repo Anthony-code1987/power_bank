@@ -11,6 +11,6 @@ Powerbank.destroy_all
 User.destroy_all
 
 user1 = User.create!(name: "Albert", email: "albert@gmail.com", password: "azerty", phone_number: "0600000000")
-user2 = User.create!(name: "Lou", email: "lou@gmail.com", password: "azerty", phone_number: "06000000000")
+user2 = User.create!(name: "Lou", email: "lou@gmail.com", password: "azerty", phone_number: "06000000000", current_user)
 
 Powerbank.create(title: "Métro chargeur", adress: "21 rue Haxo", description: "5 chargeur disponible", price: 5, user: user1)

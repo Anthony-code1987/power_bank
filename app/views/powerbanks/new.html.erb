@@ -1,0 +1,9 @@
+<h2>Create a new powerbank offer</h2>
+
+<%= simple_form_for @powerbank do |f| %>
+  <%= f.input :title %>
+  <%= f.input :adress %>
+  <%= f.input :description %>
+  <%= f.input :price %>
+  <%= f.button :submit %>
+<% end %>
