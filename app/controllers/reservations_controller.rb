@@ -1,4 +1,12 @@
 class ReservationsController < ApplicationController
+  def show
+    @reservation = Reservation.find(params[:id])
+  end
+
+  def new
+    @reservation = Reservation.new
+  end
+
   def create
     @powerbank = Powerbank.find(params[:powerbank_id])
     @reservation = Reservation.new(reservation_params)
@@ -7,11 +15,20 @@ class ReservationsController < ApplicationController
     redirect_to powerbank_path(@powerbank)
   end
 
+  def edit
+    @reservation = Reservation.find(params[:id])
+  end
+
   def update
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(params[:reservation])
+    @reservation.save
   end
 
   def destroy
-
+    @reservation = Reservation.find(params[:id])
+    @reservation.destroy
+    redirect_to powerbank_path, status: :see_other
   end
 
   private
