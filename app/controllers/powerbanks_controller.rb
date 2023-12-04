@@ -15,7 +15,6 @@ class PowerbanksController < ApplicationController
     else
       render :new
     end
-
   end
 
   private
@@ -23,5 +22,4 @@ class PowerbanksController < ApplicationController
   def powerbank_params
     params.require(:powerbank).permit(:title, :adress, :description, :price)
   end
-
 end
