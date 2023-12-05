@@ -15,3 +15,36 @@ legend ~ div.form-check:first-of-type {
   margin: auto;
   /* Ajoutez d'autres styles au besoin */
 }
+
+.btn-green {
+  background-color: #40E29A;
+  border-radius: 8px;
+  border-style: none;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 500;
+  height: 40px;
+  line-height: 20px;
+  list-style: none;
+  margin: auto;
+  outline: none;
+  padding: 10px 16px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: color 100ms;
+  vertical-align: baseline;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  opacity: 0.8;
+}
+
+.btn-green:hover,
+.btn-green:focus {
+  background-color: #40E29A;
+  opacity: 1;
+}
