@@ -1,5 +1,9 @@
 class PowerbanksController < ApplicationController
   before_action :set_powerbank, only: %i[show edit update destroy]
+  def index
+    @powerbanks = Powerbank.all
+  end
+
   def show
   end
 
