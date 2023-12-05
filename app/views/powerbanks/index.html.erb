@@ -1,8 +1,20 @@
-<h1>Powerbanks List</h1>
-<ul>
-  <% @powerbanks.each do |powerbank| %>
-    <li>
-    <%= powerbank.title %>
-    </li>
-  <% end %>
-</ul>
+<div class="title">
+      <h1>Powerbanks List</h1>
+</div>
+
+
+<div class="display">
+
+  <div class="cards" >
+    <% @powerbanks.each do |powerbank| %>
+      <div class="card" style="background-image: url(https://source.unsplash.com/random/?shop)">
+            <%= powerbank.title %>
+      </div>
+    <% end %>
+  </div>
+<%# MAPBOX MAP %>
+      <div>
+          <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoidGhlb2JvbmRheiIsImEiOiJjbGEyZjhhMTIwZmZhM3dtem5mYTExdTkyIn0.O6n6cG77lq8S9ay3vaJGFw'>
+      </div>
+<%# MAPBOX MAP %>
+</div>
