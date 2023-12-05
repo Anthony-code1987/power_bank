@@ -1,0 +1,10 @@
+<h2><%= @powerbank.title %></h2>
+<p>Adress: <%= @powerbank.adress %></p>
+<p>Description: <%= @powerbank.description %></p>
+<h3>Price: <%= @powerbank.price %></h3>
+
+<%= link_to "Edit", edit_powerbank_path %>
+
+<%= link_to "Delete", powerbank_path(Powerbank.find(params[:id])), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %>
+
+<%= link_to "Homepage", root_path %>
