@@ -9,5 +9,5 @@ Rails.application.routes.draw do
   resources :powerbanks, except: :index do
     resources :reservations, only: [:create, :edit, :show]
   end
-  resources :reservations, only: :destroy
+  resources :reservations, only: [:destroy, :index]
 end
