@@ -1,20 +1,20 @@
 <div class="container">
   <div class="powerbank-infos">
-    <img src="https://source.unsplash.com/random/?shop" alt="places">
+    <img src="https://source.unsplash.com/random/600x370/?shop" alt="places">
     <div class="avis-infos">
       <h2><%= @powerbank.title %></h2>
       <p>Adress: <%= @powerbank.adress %></p>
       <p>Description: <%= @powerbank.description %></p>
-      <h3>Price: <%= @powerbank.price %></h3>
+      <p>Price: <%= @powerbank.price %></p>
 
-      <%= link_to "Edit", edit_powerbank_path %>
+      <%= link_to "Edit", edit_powerbank_path, class:"btn-green"%>
 
-      <%= link_to "Delete", powerbank_path(Powerbank.find(params[:id])), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"} %>
+      <%= link_to "Delete", powerbank_path(Powerbank.find(params[:id])), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn-green" %>
     </div>
   </div>
 
   <div class="reservation">
-    <h4><%= @powerbank.title %></h4>
+    <h4>New Reservation</h4>
     <%= render "reservations/form_reservation", reservation: @reservation %>
   </div>
 
