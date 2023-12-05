@@ -8,7 +8,7 @@
   <div class="cards" >
     <% @powerbanks.each do |powerbank| %>
       <div class="card" style="background-image: url(https://source.unsplash.com/random/?shop)">
-            <%= powerbank.title %>
+            <%= link_to powerbank.title, powerbank_path(powerbank.id)%>
       </div>
     <% end %>
   </div>
@@ -18,3 +18,5 @@
       </div>
 <%# MAPBOX MAP %>
 </div>
+
+<%= link_to "Add a new powerbank", new_powerbank_path %>

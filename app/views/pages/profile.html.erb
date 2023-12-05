@@ -1,0 +1,9 @@
+<h1>Bonjour, <%= current_user.name %></h1>
+  <% if current_user.photo.attached? %>
+    <%= cl_image_tag current_user.photo.key, height: 300, width: 400, crop: :fill %>
+  <% else %>
+    <%= image_tag "power_bank1.jpg.jpg" %>
+  <% end %>
+<p>Name : <%= current_user.name %></p>
+<p>Phone Number : <%= current_user.phone_number %></p>
+<%= link_to "Update Profile", edit_user_registration_path %>
