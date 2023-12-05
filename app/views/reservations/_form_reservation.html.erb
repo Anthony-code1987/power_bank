@@ -1,0 +1,6 @@
+<%= simple_form_for [@powerbank, @reservation] do |f| %>
+  <%= f.input :start_date %>
+  <%= f.input :end_date %>
+  <p>Total : <%= @powerbank.price %></p>
+  <%= f.button :submit %>
+<% end %>

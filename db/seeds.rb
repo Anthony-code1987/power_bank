@@ -6,7 +6,10 @@
 #
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
+
 #   end
+require 'faker'
+
 Powerbank.destroy_all
 User.destroy_all
 
@@ -14,4 +17,32 @@ user1 = User.create!(name: "Albert", email: "albert@gmail.com", password: "azert
 user2 = User.create!(name: "Lou", email: "lou@gmail.com", password: "azerty", phone_number: "06000000000")
 user3 = User.create!(name: "Lila", email: "lila@gmail.com", password: "azerty", phone_number: "06000000000")
 
-Powerbank.create(title: "Métro chargeur", adress: "21 rue Haxo", description: "5 chargeur disponible", price: 5, user: user1)
+20.times do
+  Powerbank.create(
+    title: Faker::Name.name,
+    adress: Faker::Address.full_address,
+    description: Faker::Commerce.product_name,
+    price: Faker::Commerce.price,
+    user: user1
+  )
+end
+
+20.times do
+  Powerbank.create(
+    title: Faker::Name.name,
+    adress: Faker::Address.full_address,
+    description: Faker::Commerce.product_name,
+    price: Faker::Commerce.price,
+    user: user2
+  )
+end
+
+20.times do
+  Powerbank.create(
+    title: Faker::Name.name,
+    adress: Faker::Address.full_address,
+    description: Faker::Commerce.product_name,
+    price: Faker::Commerce.price,
+    user: user3
+  )
+end

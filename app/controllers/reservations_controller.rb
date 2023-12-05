@@ -1,9 +1,15 @@
 class ReservationsController < ApplicationController
+
+  def new
+    @reservation = Reservation.new
+  end
+
   def create
     @powerbank = Powerbank.find(params[:powerbank_id])
     @reservation = Reservation.new(reservation_params)
     @reservation.powerbank = @powerbank
-    @reservation.save
+    @reservation.user = current_user
+    @reservation.save!
     redirect_to powerbank_path(@powerbank)
   end
 
