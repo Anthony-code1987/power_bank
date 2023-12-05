@@ -1,5 +1,6 @@
 class PowerbanksController < ApplicationController
   before_action :set_powerbank, only: %i[show edit update destroy]
+  skip_before_action :authenticate_user!, only: :index
   def index
     @powerbanks = Powerbank.all
   end
