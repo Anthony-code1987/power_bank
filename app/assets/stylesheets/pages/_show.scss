@@ -13,8 +13,6 @@
 }
 
 .powerbank-infos > img {
-  // height: auto;
-  // width: 100%;
   object-fit: cover;
 }
 
@@ -53,7 +51,7 @@
     height: 40px;
     line-height: 20px;
     list-style: none;
-    margin: 0;
+    margin: auto;
     outline: none;
     padding: 10px 16px;
     position: relative;
