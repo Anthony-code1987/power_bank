@@ -2,7 +2,9 @@
 <ul>
   <% @powerbanks.each do |powerbank| %>
     <li>
-    <%= powerbank.title %>
+    <%= link_to powerbank.title, powerbank_path(powerbank.id)%>
     </li>
   <% end %>
 </ul>
+
+<%= link_to "Add a new powerbank", new_powerbank_path %>
