@@ -14,7 +14,7 @@
 .cards{
   flex-grow: 1;
   display: grid;
-  height: 150px;
+  /* height: 150px; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
@@ -42,20 +42,30 @@
 
 
 
-#map {
-  height: 150vh;
-  position: sticky;
-  padding: 15px;
+.map {
+  position: sticky !important;
   margin-left: -17px;
   border-radius: 1px;
-  top: 0;
+  top: 0 !important;
+}
+
+card-img, .card-img-top, .card-img-bottom {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.mapboxgl-canvas {
+  width: 363.219px;
+  height: 150vh;
+  padding: 15px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
   }
-  #map {
+  .mapboxgl-canvas {
     display: none;
   }
 }
@@ -64,7 +74,7 @@
   .cards {
     grid-template-columns: 1fr 1fr;
   }
-  #map {
+  .mapboxgl-canvas {
     display: none;
   }
 }
@@ -73,7 +83,7 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  #map {
+  .mapboxgl-canvas {
     display: block;
   }
 }

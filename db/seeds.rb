@@ -18,12 +18,14 @@ user1 = User.create!(name: "Albert", email: "albert@gmail.com", password: "azert
 user2 = User.create!(name: "Lou", email: "lou@gmail.com", password: "azerty", phone_number: "06000000000")
 user3 = User.create!(name: "Lila", email: "lila@gmail.com", password: "azerty", phone_number: "06000000000")
 
+Powerbank.create!(title: "Powerbank Wagon", adress: "21 Rue Haxo, Marseille", description: "Powerbank very good", price: 10, user: user1)
+
 20.times do
   Powerbank.create(
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
     description: Faker::Commerce.product_name,
-    price: Faker::Commerce.price,
+    price: Faker::Number.within(range: 1..5),
     user: user1
   )
 end
@@ -33,7 +35,7 @@ end
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
     description: Faker::Commerce.product_name,
-    price: Faker::Commerce.price,
+    price: Faker::Number.within(range: 1..5),
     user: user2
   )
 end
@@ -43,7 +45,7 @@ end
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
     description: Faker::Commerce.product_name,
-    price: Faker::Commerce.price,
+    price: Faker::Number.within(range: 1..5),
     user: user3
   )
 end

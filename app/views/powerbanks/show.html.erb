@@ -1,29 +1,31 @@
 <div class="container">
-  <div class="powerbank-infos">
-    <img src="https://source.unsplash.com/random/600x370/?shop" alt="places">
-    <div class="avis-infos">
-      <h2><%= @powerbank.title %></h2>
-      <p>Adress: <%= @powerbank.adress %></p>
-      <p>Description: <%= @powerbank.description %></p>
-      <p>Price: <%= @powerbank.price %></p>
-
-      <%= link_to "Edit", edit_powerbank_path, class:"btn-green"%>
-
-      <%= link_to "Delete", powerbank_path(Powerbank.find(params[:id])), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn-green" %>
-
-      <div data-controller="toggle" class="mt-3">
-        <button data-action="click->toggle#fire" class="btn-green bottom-left">Reserve</button>
-        <div data-toggle-target="togglableElement" class="d-none">
-          <%= render "reservations/form_reservation", reservation: @reservation %>
-          </div>
+  <div class= "container-infos">
+    <div class="powerbank-infos">
+      <img src="https://source.unsplash.com/random/600x370/?shop" alt="places">
+      <div class="avis-infos">
+        <h2><%= @powerbank.title %></h2>
+        <p>Adresse: <%= @powerbank.adress %></p>
+        <p>Description: <%= @powerbank.description %></p>
+        <p>Price: <%= @powerbank.price %>€ / heure</p>
       </div>
+    </div>
 
+    <div class="button-show">
+      <% if current_user == @powerbank.user %>
+      <div class= "link-show">
+        <%= link_to "Edit", edit_powerbank_path(@powerbank.id), class:"btn-green"%>
+
+        <%= link_to "Delete", powerbank_path(Powerbank.find(params[:id])), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn-green" %>
+      </div>
+      <% else %>
+        <div data-controller="toggle" class="mt-3">
+          <button data-action="click->toggle#fire" class="btn-green bottom-left">Reserve</button>
+            <div data-toggle-target="togglableElement" class="d-none">
+              <%= render "reservations/form_reservation", reservation: @reservation %>
+            </div>
+        </div>
+      <% end %>
     </div>
   </div>
-
-  <%# <div class="reservation"> %>
-    <%# <h4>New Reservation</h4> %>
-    <%# <%= render "reservations/form_reservation", reservation: @reservation %>
-  <%# </div> %>
 
 </div>
