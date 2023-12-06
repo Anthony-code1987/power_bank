@@ -1,6 +1,10 @@
 <%= simple_form_for [@powerbank, @reservation] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
+  <%= f.input :end_date,
+              as: :string,
+              input_html: { data: { controller: "datepicker" } } %>
   <p>Total : <%= @powerbank.price %></p>
   <%= f.button :submit, class:"btn-green"%>
 <% end %>
