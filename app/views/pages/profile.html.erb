@@ -17,10 +17,9 @@
 </div>
 
 
-<% if @powerbank.user_id == current_user %>
   <div class= "display">
     <div class="cards" >
-      <% @powerbanks.each do |powerbank| %>
+      <% @powerbank.each do |powerbank| %>
       <div class="card">
               <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
           <div class="card-body">
@@ -33,4 +32,3 @@
       <% end %>
     </div>
   </div>
-<% end %>
