@@ -7,7 +7,7 @@ class PowerbanksController < ApplicationController
       {
         lat: powerbank.latitude,
         lng: powerbank.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { powerbank: powerbank }),
+        info_window_html: render_to_string(partial: "info_window", locals: { powerbank: powerbank }),
         marker_html: render_to_string(partial: "marker", locals: { powerbank: powerbank })
       }
     end
