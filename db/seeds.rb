@@ -25,7 +25,7 @@ Powerbank.create!(title: "Powerbank Wagon", adress: "21 Rue Haxo, Marseille", de
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
     description: Faker::Commerce.product_name,
-    price: Faker::Commerce.price,
+    price: Faker::Number.within(range: 1..5),
     user: user1
   )
 end
@@ -35,7 +35,7 @@ end
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
     description: Faker::Commerce.product_name,
-    price: Faker::Commerce.price,
+    price: Faker::Number.within(range: 1..5),
     user: user2
   )
 end
@@ -45,7 +45,7 @@ end
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
     description: Faker::Commerce.product_name,
-    price: Faker::Commerce.price,
+    price: Faker::Number.within(range: 1..5),
     user: user3
   )
 end

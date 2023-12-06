@@ -15,3 +15,22 @@
     </div>
   </div>
 </div>
+
+<div class= "container mt-5">
+<h2 >Vos powerbanks</h2>
+</div>
+  <div class= "display">
+    <div class="cards" >
+      <% @powerbank.each do |powerbank| %>
+      <div class="card">
+              <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
+          <div class="card-body">
+              <h5 class="card-title"><%= link_to powerbank.title, powerbank_path(powerbank.id)%></h5>
+              <p class="card-text"><%= powerbank.description %></p>
+              <p class="card-text"><%= powerbank.adress %></p>
+              <p class="card-text"><%= powerbank.price %>€</p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
