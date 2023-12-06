@@ -14,7 +14,7 @@
 .cards{
   flex-grow: 1;
   display: grid;
-  height: 150px;
+  /* height: 150px; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
@@ -41,21 +41,26 @@
 }
 
 
-
-#map {
+.map {
   height: 150vh;
-  position: sticky;
+  position: sticky !important;
   padding: 15px;
   margin-left: -17px;
   border-radius: 1px;
-  top: 0;
+  top: 0 !important;
+}
+
+.mapboxgl-canvas {
+  width: 363.219px;
+  height: 600px;
+  padding: 15px;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
   .cards {
     grid-template-columns: 1fr;
   }
-  #map {
+  .map {
     display: none;
   }
 }
@@ -64,7 +69,7 @@
   .cards {
     grid-template-columns: 1fr 1fr;
   }
-  #map {
+  .map {
     display: none;
   }
 }
@@ -73,7 +78,7 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  #map {
+  .map {
     display: block;
   }
 }

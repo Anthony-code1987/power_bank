@@ -3,6 +3,12 @@ class PowerbanksController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     @powerbanks = Powerbank.all
+      @markers = @powerbanks.geocoded.map do |powerbank|
+        {
+          lat: powerbank.latitude,
+          lng: powerbank.longitude
+        }
+      end
   end
 
   def show
