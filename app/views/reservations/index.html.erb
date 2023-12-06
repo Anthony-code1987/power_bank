@@ -1,9 +1,15 @@
-<h1>Reservations</h1>
-<ul>
-  <% @reservations.each do |reservation| %>
-    <li>
-    <%= reservation.start_date %>
-    <%= reservation.end_date %>
-    </li>
-  <% end %>
-</ul>
+<div class="container d-flex justify-content-center">
+  <div class="row">
+    <div class="col">
+      <h2 class="mx-5 font-weight-bolder mb-4 mt-5">Reservations</h2>
+      <ul>
+        <% @reservations.each do |reservation| %>
+          <li>
+          <%= reservation.start_date %>
+          <%= reservation.end_date %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
