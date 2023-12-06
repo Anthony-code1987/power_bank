@@ -40,6 +40,12 @@
   color: black;
 }
 
+card-img, .card-img-top, .card-img-bottom {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
 #map {
   height: 150vh;
   position: sticky;
@@ -47,12 +53,6 @@
   margin-left: -17px;
   border-radius: 1px;
   top: 0;
-}
-
-card-img, .card-img-top, .card-img-bottom {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
 }
 
 @media (min-width: 100px) and (max-width: 575px) {
