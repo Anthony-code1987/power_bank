@@ -6,7 +6,9 @@ class PowerbanksController < ApplicationController
       @markers = @powerbanks.geocoded.map do |powerbank|
         {
           lat: powerbank.latitude,
-          lng: powerbank.longitude
+          lng: powerbank.longitude,
+          info_window_html: render_to_string(partial: "info_window", locals: {powerbank: powerbank}),
+          marker_html: render_to_string(partial: "marker", locals: {powerbank: powerbank})
         }
       end
   end

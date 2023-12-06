@@ -42,9 +42,7 @@
 
 
 .map {
-  height: 150vh;
   position: sticky !important;
-  padding: 15px;
   margin-left: -17px;
   border-radius: 1px;
   top: 0 !important;
@@ -52,7 +50,7 @@
 
 .mapboxgl-canvas {
   width: 363.219px;
-  height: 600px;
+  height: 150vh;
   padding: 15px;
 }
 
@@ -60,7 +58,7 @@
   .cards {
     grid-template-columns: 1fr;
   }
-  .map {
+  .mapboxgl-canvas {
     display: none;
   }
 }
@@ -69,7 +67,7 @@
   .cards {
     grid-template-columns: 1fr 1fr;
   }
-  .map {
+  .mapboxgl-canvas {
     display: none;
   }
 }
@@ -78,7 +76,7 @@
   .cards {
     grid-template-columns: 1fr 1fr 1fr;
   }
-  .map {
+  .mapboxgl-canvas {
     display: block;
   }
 }
