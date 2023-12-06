@@ -7,23 +7,19 @@
       <p>Description: <%= @powerbank.description %></p>
       <p>Price: <%= @powerbank.price %></p>
 
-      <%= link_to "Edit", edit_powerbank_path, class:"btn-green"%>
+      <% if current_user == @powerbank.user %>
+        <%= link_to "Edit", edit_powerbank_path(@powerbank.id), class:"btn-green"%>
 
-      <%= link_to "Delete", powerbank_path(Powerbank.find(params[:id])), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn-green" %>
-
-      <div data-controller="toggle" class="mt-3">
-        <button data-action="click->toggle#fire" class="btn-green bottom-left">Reserve</button>
-        <div data-toggle-target="togglableElement" class="d-none">
-          <%= render "reservations/form_reservation", reservation: @reservation %>
-          </div>
-      </div>
+        <%= link_to "Delete", powerbank_path(Powerbank.find(params[:id])), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn-green" %>
+      <% else %>
+        <div data-controller="toggle" class="mt-3">
+          <button data-action="click->toggle#fire" class="btn-green bottom-left">Reserve</button>
+          <div data-toggle-target="togglableElement" class="d-none">
+            <%= render "reservations/form_reservation", reservation: @reservation %>
+            </div>
+        </div>
+      <% end %>
 
     </div>
   </div>
-
-  <%# <div class="reservation"> %>
-    <%# <h4>New Reservation</h4> %>
-    <%# <%= render "reservations/form_reservation", reservation: @reservation %>
-  <%# </div> %>
-
 </div>
