@@ -3,23 +3,14 @@ class PowerbanksController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     @powerbanks = Powerbank.all
-    @users = User.all
-      @markers = @powerbanks.geocoded.map do |powerbank|
-        {
-          lat: powerbank.latitude,
-          lng: powerbank.longitude,
-          info_window_html: render_to_string(partial: "info_window", locals: {powerbank: powerbank}),
-          marker_html: render_to_string(partial: "marker", locals: {powerbank: powerbank})
-        }
-      end
-
-        @users.each do |user|
-            @markers << {
-            lat: user.latitude,
-            lng: user.longitude,
-            infoWindow: render_to_string(partial: "users/info_window", locals: { user: user })
-          }
-        end
+    @markers = @powerbanks.geocoded.map do |powerbank|
+      {
+        lat: powerbank.latitude,
+        lng: powerbank.longitude,
+        infoWindow: render_to_string(partial: "info_window", locals: { powerbank: powerbank }),
+        marker_html: render_to_string(partial: "marker", locals: { powerbank: powerbank })
+      }
+    end
   end
 
   def show
