@@ -27,7 +27,7 @@ class ReservationsController < ApplicationController
   def accept
     @reservation = Reservation.find(params[:id])
     @reservation.update(validated: true)
-    redirect_to powerbank_reservation_path(@reservation)
+    redirect_to profile_path
   end
 
   def destroy
