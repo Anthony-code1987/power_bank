@@ -2,6 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "powerbanks#index"
   get "profile", to: "pages#profile"
+  resources :pages do
+    patch "accept", to: "reservations#accept", as: "reservation_accepted"
+    patch "decline", to: "reservations#decline", as: "reservation_decline"
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

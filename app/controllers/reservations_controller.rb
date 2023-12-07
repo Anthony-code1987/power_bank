@@ -29,6 +29,16 @@ class ReservationsController < ApplicationController
     redirect_to powerbank_path, status: :see_other
   end
 
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.validated = true
+  end
+
+  def decline
+    @reservation = Reservation.find(params[:id])
+    @reservation.validated = false
+  end
+
   private
 
   def reservation_params
