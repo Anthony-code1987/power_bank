@@ -20,9 +20,9 @@
 <h2 >Vos powerbanks</h2>
 </div>
   <div class= "display">
-    <div class="cards" >
+    <div class="cards">
       <% @powerbank.each do |powerbank| %>
-      <div class="card">
+      <div class="card" data-tab-button-target="card-info-for-current-user">
               <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
           <div class="card-body">
               <h5 class="card-title"><%= link_to powerbank.title, powerbank_path(powerbank.id)%></h5>
