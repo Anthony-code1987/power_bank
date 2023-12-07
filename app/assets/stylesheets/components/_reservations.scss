@@ -1,0 +1,55 @@
+body {
+  font-size: 1.5rem;
+}
+
+h2 {
+  color: #00822F;
+  font-style: 2.5rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.reserv-cards {
+display: flex;
+}
+.reserv-cards li {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  height: 450px;
+  width: 480px;
+  margin: 20px;
+  padding-top: 30px;
+  list-style: none;
+  border-radius: 5px;
+  display: flex;
+  justify-content: flex-start;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+  padding: 20px;
+}
+
+.btn {
+  /* width: 100px; */
+  margin-top: 40px;
+}
+.btn p {
+  padding: 1px 0;
+}
+
+.main-container {
+  display: flex;
+}
+.main-container>#map {
+  height: 100vh;
+  width: 500px;
+  position: sticky;
+  top: 0;
+  object-fit: cover;
+  padding: 21px 0;
+}
+
+.adress-reserv{
+  width: 350px;
+  font-size: 1.5rem;
+}
