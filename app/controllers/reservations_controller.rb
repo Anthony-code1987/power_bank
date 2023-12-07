@@ -24,11 +24,18 @@ class ReservationsController < ApplicationController
     @reservation.save
   end
 
+  def accept
+    @reservation = Reservation.find(params[:id])
+    @reservation.update(validated: true)
+    redirect_to powerbank_reservation_path(@reservation)
+  end
+
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to powerbank_path, status: :see_other
+    redirect_to profile_path, status: :see_other
   end
+
 
   private
 
