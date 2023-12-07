@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <div class="button-show">
+<div class="button-show">
       <% if current_user == @powerbank.user %>
       <div class= "link-show">
         <%= link_to "Edit", edit_powerbank_path(@powerbank.id), class:"btn-green"%>
@@ -19,13 +19,15 @@
       </div>
       <% else %>
         <div data-controller="toggle" class="mt-3">
-          <button data-action="click->toggle#fire" class="btn-green bottom-left">Reserve</button>
+          <button data-action="click->toggle#fire" data-toggle-target="triggerElement" class="btn-green bottom-left">Reserve</button>
             <div data-toggle-target="togglableElement" class="d-none">
               <%= render "reservations/form_reservation", reservation: @reservation %>
             </div>
         </div>
       <% end %>
     </div>
+
+
   </div>
 
 </div>

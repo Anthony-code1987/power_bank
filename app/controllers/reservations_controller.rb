@@ -13,8 +13,9 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
     @reservation.powerbank = @powerbank
     @reservation.user = current_user
-    @reservation.save!
-    redirect_to powerbank_path(@powerbank)
+    if @reservation.save!
+    redirect_to reservations_path(@reservation)
+    end
   end
 
   def update
