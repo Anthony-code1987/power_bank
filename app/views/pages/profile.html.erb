@@ -16,21 +16,43 @@
   </div>
 </div>
 
-<div class= "container mt-5">
-<h2 >Vos powerbanks</h2>
-</div>
-  <div class= "display">
+<div class="container mt-5">
+  <% if @reservations.present? %>
+    <h2>Reservations Request</h2>
     <div class="cards">
-      <% @powerbank.each do |powerbank| %>
-      <div class="card" data-tab-button-target="card-info-for-current-user">
-              <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
-          <div class="card-body">
-              <h5 class="card-title"><%= link_to powerbank.title, powerbank_path(powerbank.id)%></h5>
-              <p class="card-text"><%= powerbank.description %></p>
-              <p class="card-text"><%= powerbank.adress %></p>
-              <p class="card-text"><%= powerbank.price %>€</p>
-          </div>
+      <% @reservations.each do |reservation| %>
+        <div class="card">
+          <p>Start date: <%= reservation.start_date %></p>
+          <p>End date: <%= reservation.end_date %></p>
+          <p>Powerbank: <%= reservation.powerbank.title %></p>
+          <% if reservation.validated == false %>
+            <p>Status: Pending </p>
+            <%= link_to "Accept", reservation_accepted_path(reservation), data: {turbo_method: :patch} %>
+            <%= link_to "Decline", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm:"Are you sure ?"} %>
+          <% elsif reservation.validated == true%>
+            <p>Validated</p>
+          <% end %>
         </div>
       <% end %>
     </div>
+  <% end %>
+</div>
+
+<div class= "container mt-5">
+<h2 >Your Powerbanks</h2>
+</div>
+<div class= "display">
+  <div class="cards" >
+    <% @powerbank.each do |powerbank| %>
+    <div class="card">
+            <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
+        <div class="card-body">
+            <h5 class="card-title"><%= link_to powerbank.title, powerbank_path(powerbank.id)%></h5>
+            <p class="card-text"><%= powerbank.description %></p>
+            <p class="card-text"><%= powerbank.adress %></p>
+            <p class="card-text"><%= powerbank.price %>€</p>
+        </div>
+      </div>
+    <% end %>
   </div>
+</div>
