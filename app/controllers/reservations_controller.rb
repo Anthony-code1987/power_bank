@@ -31,12 +31,12 @@ class ReservationsController < ApplicationController
 
   def accept
     @reservation = Reservation.find(params[:id])
-    @reservation.validated = true
+    @reservation.update(validated: true)
   end
 
   def decline
     @reservation = Reservation.find(params[:id])
-    @reservation.validated = false
+    @reservation.update(validated: false)
   end
 
   private

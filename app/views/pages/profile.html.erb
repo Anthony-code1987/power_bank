@@ -27,10 +27,9 @@
           <p>End date: <%= reservation.end_date %></p>
           <p>Powerbank: <%= reservation.powerbank_id %></p>
           <p>Status: <%= reservation.validated %></p>
-          <div class="buttons">
-            <button>Accept</button>
-            <button>Decline</button>
-          </div>
+
+          <%= link_to "Accept", reservation_accepted_path(reservation), data: {turbo_method: :patch} %>
+          <%= link_to "Decline", reservation_decline_path(reservation), data: {turbo_method: :patch} %>
         </div>
       <% end %>
     </div>
