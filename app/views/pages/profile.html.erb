@@ -27,19 +27,18 @@
           <p>End date: <%= reservation.end_date %></p>
           <p>Powerbank: <%= reservation.powerbank.title %></p>
           <% if reservation.validated == false %>
-           <p>Status: Pending </p>
+            <p>Status: Pending </p>
             <%= link_to "Accept", reservation_accepted_path(reservation), data: {turbo_method: :patch} %>
             <%= link_to "Decline", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm:"Are you sure ?"} %>
           <% elsif reservation.validated == true%>
             <p>Validated</p>
           <% end %>
-
-          </div>
         </div>
       <% end %>
     </div>
   <% end %>
 </div>
+
 
 <div class= "container mt-5">
 <h2 >Your Powerbanks</h2>
