@@ -25,11 +25,16 @@
         <div class="card">
           <p>Start date: <%= reservation.start_date %></p>
           <p>End date: <%= reservation.end_date %></p>
-          <p>Powerbank: <%= reservation.powerbank_id %></p>
-          <p>Status: <%= reservation.validated %></p>
+          <p>Powerbank: <%= reservation.powerbank.title %></p>
+          <% if reservation.validated == false %>
+           <p>Status: Pending </p>
+            <%= link_to "Accept", reservation_accepted_path(reservation), data: {turbo_method: :patch} %>
+            <%= link_to "Decline", reservation_path(reservation), data: {turbo_method: :delete, turbo_confirm:"Are you sure ?"} %>
+          <% elsif reservation.validated == true%>
+            <p>Validated</p>
+          <% end %>
 
-          <%= link_to "Accept", reservation_accepted_path(reservation), data: {turbo_method: :patch} %>
-          <%= link_to "Decline", reservation_decline_path(reservation), data: {turbo_method: :patch} %>
+          </div>
         </div>
       <% end %>
     </div>
