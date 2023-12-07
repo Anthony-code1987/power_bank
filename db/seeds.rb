@@ -18,9 +18,9 @@ user1 = User.create!(name: "Albert", email: "albert@gmail.com", password: "azert
 user2 = User.create!(name: "Lou", email: "lou@gmail.com", password: "azerty", phone_number: "06000000000")
 user3 = User.create!(name: "Lila", email: "lila@gmail.com", password: "azerty", phone_number: "06000000000")
 
-Powerbank.create!(title: "Powerbank Wagon", adress: "21 Rue Haxo, Marseille", description: "Powerbank very good", price: 10, user: user1)
+# Powerbank.create!(title: "Powerbank Wagon", adress: "21 Rue Haxo, Marseille", description: "Powerbank very good", price: 10, user: user1)
 
-20.times do
+3.times do
   Powerbank.create(
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
@@ -30,7 +30,7 @@ Powerbank.create!(title: "Powerbank Wagon", adress: "21 Rue Haxo, Marseille", de
   )
 end
 
-20.times do
+2.times do
   Powerbank.create(
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
@@ -40,7 +40,7 @@ end
   )
 end
 
-20.times do
+1.times do
   Powerbank.create(
     title: Faker::Name.name,
     adress: Faker::Address.full_address,
