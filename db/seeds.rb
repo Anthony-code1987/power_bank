@@ -9,6 +9,7 @@
 
 #   end
 require 'faker'
+require "open-uri"
 
 Powerbank.destroy_all
 User.destroy_all
