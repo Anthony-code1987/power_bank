@@ -1,7 +1,23 @@
 .reservation-cards{
   grid-template-columns: 1fr !important;
+  max-width: 60%;
+
 }
 
 .display-reservation{
+  padding: 6%;
+}
 
+#map-spot {
+  width: 40%;
+}
+
+.cards-reserv {
+    width: 40%;
+    flex-grow: 1;
+    display: grid;
+    /* height: 150px; */
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 16px;
+    padding: 16px;
 }
