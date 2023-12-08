@@ -43,26 +43,47 @@ powerbank15 = Powerbank.create!(title: "Hôpital privé Clairval", adress: "317 
 powerbank16 = Powerbank.create!(title: "M.A.C", adress: "69 Av. d'Haifa, 13008 Marseille", description: "Lasuki Batterie Externe Solaire 31200mAh", price: 5, user: user4)
 
 # --------------------------
+file1 = file = URI.open("https://www-img.lewagon.com/cTTZTQ2EneDwh96cFOoDGnFKw5GMiAHOS8iYnfSPL3U/rs:fill:320:400/plain/s3://wagon-www/fj45zu3ho147ip0oyzcehl90erbu")
+file2 = file = URI.open("https://tourisme-marseille.com/wp-content/uploads/2021/09/marseille-xxl-16-oeuvres-de-16m%C2%B2-les-terrasses-du-port-marseille-27.jpg")
+file3 = file = URI.open("https://www.marseille-tourisme.com/app/uploads/marseille-tourisme/2022/07/thumbs/Toit-terrasse-On_Air_2019%C2%A9CarolineDutrey-2-1920x960-crop-1658831558.jpg")
+file4 = file = URI.open("https://www.detoursenfrance.fr/sites/art-de-vivre/files/Import/det_notre-dame-de-la-garde-marseille_BR.jpg")
 
-powerbank1.photo.attach(io: file, filename: "nes.png", content_type: "lewagon.png")
-powerbank2.photo.attach(io: file, filename: "nes.png", content_type: "les-terrasses-du-port.jpg")
-powerbank3.photo.attach(io: file, filename: "nes.png", content_type: "friche-belle-de-mai.jpg")
-powerbank4.photo.attach(io: file, filename: "nes.png", content_type: "notre-dame-de-la-garde.jpg")
+file5 = file = URI.open("https://madeinmarseille.net/actualites-marseille/chateau-de-labuzine-credit-buzine-2.jpg")
+file6 = file = URI.open("https://www.bonneveine.com/wp-content/uploads/2018/07/480x300-centreB.jpg")
+file7 = file = URI.open("https://madeinmarseille.net/actualites-marseille/2018/03/centre-commercial-prado.jpg")
+file8 = file = URI.open("https://www.la-galerie.com/media/centers/thumbnail/la-valentine-vignette.jpg")
 
-powerbank5.photo.attach(io: file, filename: "nes.png", content_type: "chateau-de-labuzine.jpg")
-powerbank6.photo.attach(io: file, filename: "nes.png", content_type: "ccial-bonne-veine.jpg")
-powerbank7.photo.attach(io: file, filename: "nes.png", content_type: "ccial-prado.jpg")
-powerbank8.photo.attach(io: file, filename: "nes.png", content_type: "ccial-valentine.jpg")
+file9 = file = URI.open("https://www.resonance.golf/wp-content/uploads/2020/07/golf_pres_de_marseille-1920x1080.jpg")
+file10 = file = URI.open("https://www.architecte-agencement-decoration.com/wp-content/uploads/2019/03/Pub-Anglais-Style-Victorien-The-Red-Lion-Marseille-Marseille-Edmond-Garnier-DCA-Decoration-Concept-Amenagement-2.jpg")
+file11 = file = URI.open("https://madeinmarseille.net/actualites-marseille/2016/03/nouvelle-boutique-venue-emmaus-marseille.jpg")
+file12 = file = URI.open("https://www.vert-marine.com/wp-content/uploads/2021/09/patinoireMarseille.jpeg")
 
-powerbank9.photo.attach(io: file, filename: "nes.png", content_type: "gold_pres_de_marseille.jpg")
-powerbank10.photo.attach(io: file, filename: "nes.png", content_type: "red-lion.jpeg")
-powerbank11.photo.attach(io: file, filename: "nes.png", content_type: "emmaus.jpeg")
-powerbank12.photo.attach(io: file, filename: "nes.png", content_type: "patinoire.jpg")
+file13 = file = URI.open("https://marseille.love-spots.com/wp-content/uploads/2014/11/little-temple-bar_lovespots.jpg")
+file14 = file = URI.open("https://madeinmarseille.net/actualites-marseille/2017/03/campus-luminy-batiment-trp1-trp2.jpg")
+file15 = file = URI.open("https://hopital-prive-clairval-marseille.ramsaysante.fr/sites/default/files/styles/608x/public/img_1053.jpg.webp?itok=15-4A2B4")
+file16 = file = URI.open("https://madeinmarseille.net/actualites-marseille/musee-art-contemporain-mac.jpg")
 
-powerbank13.photo.attach(io: file, filename: "nes.png", content_type: "little-temple-bar.jpg")
-powerbank14.photo.attach(io: file, filename: "nes.png", content_type: "campus-luminy.jpg")
-powerbank15.photo.attach(io: file, filename: "nes.png", content_type: "clairval.jpeg")
-powerbank16.photo.attach(io: file, filename: "nes.png", content_type: "mac-marseille.jpg")
+# --------------------------
+
+powerbank1.photo.attach(io: file1, filename: "nes.png", content_type: "image/png")
+powerbank2.photo.attach(io: file2, filename: "nes.png", content_type: "image/png")
+powerbank3.photo.attach(io: file3, filename: "nes.png", content_type: "image/png")
+powerbank4.photo.attach(io: file4, filename: "nes.png", content_type: "image/png")
+
+powerbank5.photo.attach(io: file5, filename: "nes.png", content_type: "image/png")
+powerbank6.photo.attach(io: file6, filename: "nes.png", content_type: "image/png")
+powerbank7.photo.attach(io: file7, filename: "nes.png", content_type: "image/png")
+powerbank8.photo.attach(io: file8, filename: "nes.png", content_type: "image/png")
+
+powerbank9.photo.attach(io: file9, filename: "nes.png", content_type: "image/png")
+powerbank10.photo.attach(io: file10, filename: "nes.png", content_type: "image/png")
+powerbank11.photo.attach(io: file11, filename: "nes.png", content_type: "image/png")
+powerbank12.photo.attach(io: file12, filename: "nes.png", content_type: "image/png")
+
+powerbank13.photo.attach(io: file13, filename: "nes.png", content_type: "image/png")
+powerbank14.photo.attach(io: file14, filename: "nes.png", content_type: "image/png")
+powerbank15.photo.attach(io: file15, filename: "nes.png", content_type: "image/png")
+powerbank16.photo.attach(io: file16, filename: "nes.png", content_type: "image/png")
 
 # ------------------------------------
 
