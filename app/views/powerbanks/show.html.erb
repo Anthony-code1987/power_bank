@@ -1,7 +1,11 @@
 <div class="container">
   <div class= "container-infos">
     <div class="powerbank-infos">
-      <img src="https://source.unsplash.com/random/600x370/?shop" alt="places">
+      <% if @powerbank.photo.attached? %>
+        <%= cl_image_tag @powerbank.photo.key, height: 300, width: 400, crop: :fill, class:"card-img-top" %>
+      <% else %>
+        <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
+      <% end %>
       <div class="avis-infos">
         <h2><%= @powerbank.title %></h2>
         <p>Adresse: <%= @powerbank.adress %></p>
