@@ -2,9 +2,9 @@
     <h1>My reservations</h1>
 </div>
 
-<div class="display">
+<div class="display display-reservation">
 
- <div class="cards">
+ <div class="cards reservation-cards">
       <% @reservations.each do |reservation| %>
       <div class="card">
               <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
@@ -17,11 +17,11 @@
             </div>
             <strong>from</strong>
             <div>
-              <p class="card-text card-footer"><%= reservation.start_date %>hour</p>
+              <p class="card-text card-footer"><%= reservation.start_date %> Hour</p>
             </div>
             <strong>to</strong>
             <div>
-              <p class="card-text card-footer"><%= reservation.end_date %> hour</p>
+              <p class="card-text card-footer"><%= reservation.end_date %> Hour</p>
             </div>
             <div>
               <%= link_to "Delete", reservation_path(Reservation.find(reservation.id)), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn-green" %>
