@@ -44,47 +44,47 @@ powerbank16 = Powerbank.create!(title: "M.A.C", adress: "69 Av. d'Haifa, 13008 M
 
 # --------------------------
 
-powerbank1.photo.attach(io: file, filename: "nes.png", content_type: "images/lewagon.png")
-powerbank2.photo.attach(io: file, filename: "nes.png", content_type: "/images/les-terrasses-du-port.jpg")
-powerbank3.photo.attach(io: file, filename: "nes.png", content_type: "images/friche-belle-de-mai.jpg")
-powerbank4.photo.attach(io: file, filename: "nes.png", content_type: "images/notre-dame-de-la-garde.jpg")
+powerbank1.photo.attach(io: file, filename: "nes.png", content_type: "lewagon.png")
+powerbank2.photo.attach(io: file, filename: "nes.png", content_type: "les-terrasses-du-port.jpg")
+powerbank3.photo.attach(io: file, filename: "nes.png", content_type: "friche-belle-de-mai.jpg")
+powerbank4.photo.attach(io: file, filename: "nes.png", content_type: "notre-dame-de-la-garde.jpg")
 
-powerbank5.photo.attach(io: file, filename: "nes.png", content_type: "images/chateau-de-labuzine.jpg")
-powerbank6.photo.attach(io: file, filename: "nes.png", content_type: "images/ccial-bonne-veine.jpg")
-powerbank7.photo.attach(io: file, filename: "nes.png", content_type: "images/ccial-prado.jpg")
-powerbank8.photo.attach(io: file, filename: "nes.png", content_type: "images/ccial-valentine.jpg")
+powerbank5.photo.attach(io: file, filename: "nes.png", content_type: "chateau-de-labuzine.jpg")
+powerbank6.photo.attach(io: file, filename: "nes.png", content_type: "ccial-bonne-veine.jpg")
+powerbank7.photo.attach(io: file, filename: "nes.png", content_type: "ccial-prado.jpg")
+powerbank8.photo.attach(io: file, filename: "nes.png", content_type: "ccial-valentine.jpg")
 
-powerbank9.photo.attach(io: file, filename: "nes.png", content_type: "images/gold_pres_de_marseille.jpg")
-powerbank10.photo.attach(io: file, filename: "nes.png", content_type: "images/red-lion.jpeg")
-powerbank11.photo.attach(io: file, filename: "nes.png", content_type: "images/emmaus.jpeg")
-powerbank12.photo.attach(io: file, filename: "nes.png", content_type: "images/patinoire.jpg")
+powerbank9.photo.attach(io: file, filename: "nes.png", content_type: "gold_pres_de_marseille.jpg")
+powerbank10.photo.attach(io: file, filename: "nes.png", content_type: "red-lion.jpeg")
+powerbank11.photo.attach(io: file, filename: "nes.png", content_type: "emmaus.jpeg")
+powerbank12.photo.attach(io: file, filename: "nes.png", content_type: "patinoire.jpg")
 
-powerbank13.photo.attach(io: file, filename: "nes.png", content_type: "images/little-temple-bar.jpg")
-powerbank14.photo.attach(io: file, filename: "nes.png", content_type: "images/campus-luminy.jpg")
-powerbank15.photo.attach(io: file, filename: "nes.png", content_type: "images/clairval.jpeg")
-powerbank16.photo.attach(io: file, filename: "nes.png", content_type: "images/mac-marseille.jpg")
+powerbank13.photo.attach(io: file, filename: "nes.png", content_type: "little-temple-bar.jpg")
+powerbank14.photo.attach(io: file, filename: "nes.png", content_type: "campus-luminy.jpg")
+powerbank15.photo.attach(io: file, filename: "nes.png", content_type: "clairval.jpeg")
+powerbank16.photo.attach(io: file, filename: "nes.png", content_type: "mac-marseille.jpg")
 
 # ------------------------------------
 
-powerbank1.save
-powerbank2.save
-powerbank3.save
-powerbank4.save
+powerbank1.save!
+powerbank2.save!
+powerbank3.save!
+powerbank4.save!
 
-powerbank5.save
-powerbank6.save
-powerbank7.save
-powerbank8.save
+powerbank5.save!
+powerbank6.save!
+powerbank7.save!
+powerbank8.save!
 
-powerbank9.save
-powerbank10.save
-powerbank11.save
-powerbank12.save
+powerbank9.save!
+powerbank10.save!
+powerbank11.save!
+powerbank12.save!
 
-powerbank13.save
-powerbank14.save
-powerbank15.save
-powerbank16.save
+powerbank13.save!
+powerbank14.save!
+powerbank15.save!
+powerbank16.save!
 
 
 #  DateTime.new(a,m,j,h,m,s)
