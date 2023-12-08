@@ -2,6 +2,15 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = current_user.reservations
+    @powerbank = @reservations.map {|reservation| reservation.powerbank }
+    @markers = @powerbank.map do |powerbank|
+      {
+        lat: powerbank.latitude,
+        lng: powerbank.longitude,
+        info_window2_html: render_to_string(partial: "info_window2", locals: { powerbank: powerbank }),
+        marker2_html: render_to_string(partial: "marker2", locals: { powerbank: powerbank })
+      }
+    end
   end
 
   def new
@@ -33,7 +42,7 @@ class ReservationsController < ApplicationController
   def destroy
     @reservation = Reservation.find(params[:id])
     @reservation.destroy
-    redirect_to profile_path, status: :see_other
+    redirect_to reservation_path, status: :see_other
   end
 
 

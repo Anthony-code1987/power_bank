@@ -2,9 +2,9 @@
     <h1>My reservations</h1>
 </div>
 
-<div class="display">
+<div class="display display-reservation">
 
- <div class="cards">
+ <div class="cards reservation-cards">
       <% @reservations.each do |reservation| %>
       <div class="card">
               <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
@@ -17,11 +17,14 @@
             </div>
             <strong>from</strong>
             <div>
-              <p class="card-text card-footer"><%= reservation.start_date %>€ / heure</p>
+              <p class="card-text card-footer"><%= reservation.start_date %> Hour</p>
             </div>
             <strong>to</strong>
             <div>
-              <p class="card-text card-footer"><%= reservation.end_date %>€ / heure</p>
+              <p class="card-text card-footer"><%= reservation.end_date %> Hour</p>
+            </div>
+            <div>
+              <%= link_to "Delete", reservation_path(Reservation.find(reservation.id)), data: {turbo_method: :delete, turbo_confirm: "Are you sure ?"}, class:"btn-green" %>
             </div>
           </div>
       </div>
@@ -31,21 +34,11 @@
 <%# MAPBOX MAP %>
 
     <div class="map" style="width: 100%; height: 600px;"
-        data-controller="map"
-        data-map-markers-value="<%= @markers.to_json %>"
-        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+        data-controller="map2"
+        data-map2-reservations-value="<%= @markers.to_json %>"
+        data-map2-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
     </div>
 
   <%# MAPBOX MAP %>
 
 </div>
-
-
-
-
-
-            <div>
-            <%# Ecrit en dur à faire %>
-              <div class="btn btn-green"><p>Update</p></div>
-              <div class="btn btn-green"><p>Delete</p></div>
-            </div>
