@@ -5,19 +5,24 @@
 
 .display{
   display: flex;
-  margin: 0;
+  min-width: 100vw;
   font-family: 'Varela Round', sans-serif;
   font-size: 18px;
   background: #F4F4F4;
 }
 
 .cards{
+  min-width: 50vw;
   flex-grow: 1;
   display: grid;
   /* height: 150px; */
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 16px;
   padding: 16px;
+}
+
+.cards .d-none {
+  min-width: 50vw;
 }
 
 .card-title a {
@@ -56,7 +61,7 @@ card-img, .card-img-top, .card-img-bottom {
 }
 
 .mapboxgl-canvas {
-  width: 363.219px;
+  min-width: 50vw;
   height: 150vh;
   padding: 15px;
 }
