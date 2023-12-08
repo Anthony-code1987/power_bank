@@ -1,40 +1,51 @@
-<div class="container d-flex justify-content-center">
-  <div class="row">
-    <div class="col">
+<div class="title">
+    <h1>My reservations</h1>
+</div>
 
-      <h2 class="mx-5 font-weight-bolder mb-4 mt-5">My reservations</h2>
+<div class="display">
+
+ <div class="cards">
+      <% @reservations.each do |reservation| %>
+      <div class="card">
+              <img src="https://source.unsplash.com/random/?shop" class="card-img-top" alt="image">
+          <div class="card-body">
+            <div >
+              <h5 class="card-title"><%= reservation.powerbank.title %></h5>
+            </div>
+            <div>
+              <p class="card-text card-address"><%= reservation.powerbank.adress %></p>
+            </div>
+            <strong>from</strong>
+            <div>
+              <p class="card-text card-footer"><%= reservation.start_date %>€ / heure</p>
+            </div>
+            <strong>to</strong>
+            <div>
+              <p class="card-text card-footer"><%= reservation.end_date %>€ / heure</p>
+            </div>
+          </div>
+      </div>
+      <% end %>
+    </div>
+
+<%# MAPBOX MAP %>
+
+    <div class="map" style="width: 100%; height: 600px;"
+        data-controller="map"
+        data-map-markers-value="<%= @markers.to_json %>"
+        data-map-api-key-value="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
+
+  <%# MAPBOX MAP %>
+
+</div>
 
 
-    <div class="main-container">
 
-      <div class="reserv-cards">
-        <ul>
-          <% @reservations.each do |reservation| %>
-            <li>
 
-              <strong><%= reservation.powerbank.title %></strong>
-              <p class="adress-reserv mt-2" ><%= reservation.powerbank.adress %></p>
-              <strong>from</strong>
-              <%= reservation.start_date %>
-              <strong>to</strong>
-              <%= reservation.end_date %>
 
             <div>
             <%# Ecrit en dur à faire %>
               <div class="btn btn-green"><p>Update</p></div>
               <div class="btn btn-green"><p>Delete</p></div>
             </div>
-            </li>
-
-          <% end %>
-        </ul>
-      </div>
-
-      <img id="map" src='https://api.mapbox.com/styles/v1/mapbox/streets-v11/static/2.3381,48.8693,10.45,0,0/600x1000?access_token=pk.eyJ1IjoidGhlb2JvbmRheiIsImEiOiJjbGEyZjhhMTIwZmZhM3dtem5mYTExdTkyIn0.O6n6cG77lq8S9ay3vaJGFw'>
-
-
-    </div>
-
-    </div>
-  </div>
-</div>
